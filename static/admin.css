@@ -1,0 +1,298 @@
+* {
+    margin: 0;
+  }
+  
+  body {
+    font-family: "Roboto", sans-serif;
+  }
+  
+  .thanhcongcu {
+    width: 100%;
+    height: 50px;
+    background-color: black;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+  .percent{
+    font-size: 23px;
+    color: #000;
+  }
+  .thanhcongcu-container {
+    display: flex;
+    align-items: center;
+    padding: 0 50px;
+    height: 100%;
+    color: rgb(173, 129, 129);
+    font-family: "Sen", sans-serif;
+  }
+  
+  .logo-container {
+    flex: 1;
+  }
+  
+  .logo {
+    font-size: 30px;
+    color: #bf1600;
+  }
+  
+  .menu-container {
+    flex: 6;
+  }
+  
+  .menu-list {
+    display: flex;
+    list-style: none;
+  }
+  
+  .menu-list-item {
+    margin-right: 30px;
+  }
+  
+  .menu-list-item.active {
+    font-weight: bold;
+  }
+  .profile-container {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  
+  .profile-text-container {
+    margin: 0 20px;
+  }
+  
+  .profile-picture {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .toggle {
+    width: 40px;
+    height: 20px;
+    background-color: white;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+  }
+  
+  .toggle-icon {
+    color: goldenrod;
+  }
+  
+  .toggle-ball {
+    width: 18px;
+    height: 18px;
+    background-color: black;
+    position: absolute;
+    right: 1px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 1s ease all;
+  }
+  
+  .sidebar {
+    width: 50px;
+    height: 100%;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 60px;
+  }
+  
+  .left-menu-icon {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 40px;
+  }
+  
+  .container {
+    background-color: #151515;
+    min-height: calc(100vh - 50px);
+    color: white;
+  }
+  
+  .content-container {
+    margin-left: 50px;
+  }
+  
+  .featured-content {
+    height: 50vh;
+    padding: 50px;
+  }
+  
+  .featured-title {
+    width: 200px;
+  }
+  
+  .featured-desc {
+    width: 500px;
+    color: lightgray;
+    margin: 30px 0;
+  }
+  
+  .featured-button {
+    background-color: #4dbf00;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-weight: bold;
+  }
+  
+  body {
+    font-family: sans-serif;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .form_xoaphim,.form_xoauser {
+    width: 500px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    position: fixed;
+    top: 30%;
+    left: 30%;
+  }
+  
+  label {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  
+  .input_xoaphim {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .btn_xoaphim,.btn_out_form_xoaphim,.btn_out_form_themphim,.btn_themphim,.btn_out_form_xoauser {
+    background-color: rgb(240, 64, 64);
+    color: #fff;
+    font-weight: bold;
+    padding: 10px;
+    width: 40%;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .btn_out_form_xoaphim,.btn_out_form_themphim,.btn_out_form_xoauser{
+    background-color: rgb(24, 164, 230);
+    margin-left: 50px;
+  }
+  .btn_themphim{
+    background-color: rgb(43, 236, 43) !important;
+  }
+  .btn_xoaphim:hover {
+    background-color: red;
+  }
+  .featured-content1{
+    display: flex;
+    justify-content: space-around;
+  }
+  .featured-content2{
+    margin-top: 80px;
+  }
+  .featured-content2 button{
+    padding: 10px 15px ;
+  }
+  
+  .form_themphim {
+    width: 500px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    position: fixed;
+    top: 10%;
+    left: 30%;
+  }
+  
+  .form_themphim label {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  .box2{
+    width: 300px;
+    height: 80px;
+    background-color: white;
+    padding: 15px;
+    text-align: center;
+    color: aquamarine;
+    font-size: 20px;
+    position: fixed;
+    top: 20%;
+    left: 30%;
+  }
+  .box2_btn_out{
+    padding: 7px 13px;
+    background-color: #f7442d;
+    margin: 20px 0 0 200px;
+    width: 35%;
+  }
+  .form_themphim input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  .form_themphim button {
+    background-color: #000;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .form_themphim button:hover {
+    background-color: #444;
+  }
+  .box span{
+    padding: 10px 0;
+    color: aqua;
+    font-size: 18px;
+  }
+  .out_action{
+    background-color: #4dbf00;
+    padding: 7px 15px;
+    width: 20%;
+  }
+  .box{
+    background-color: white;
+    width: 300px;
+    height: 120px;
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    top: 30%;
+    left: 40%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  @media (max-width: 768px) {
+    form {
+      width: 100%;
+    }
+  }
+  
+  @media only screen and (max-width: 940px){
+      .menu-container{
+          display: none;
+      }
+  }

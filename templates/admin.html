@@ -1,0 +1,173 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/admin.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Sen:wght@400;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <title>Web xem phim của nhóm 1</title>
+</head>
+
+<body>
+    <div class="thanhcongcu">
+        <div class="thanhcongcu-container">
+            <div class="logo-container">
+                <h1 class="logo">Nhóm 1</h1>
+            </div>
+            <div class="menu-container">
+                <ul class="menu-list">
+                    <li class="menu-list-item active">Trang chủ</li>
+                    <li class="menu-list-item">Phim</li>
+                    <li class="menu-list-item">Thể loại</li>
+                    <li class="menu-list-item">Quốc Gia</li>
+                    <li class="menu-list-item">Xu hướng</li>
+                    <li class="logout"> 
+                        <form action="/logout" method="post">
+                          <input type="submit" value="Đăng xuất">
+                        </form>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="profile-container">
+                <img class="profile-picture" src="/static/img/profile.jpg" alt="">
+                <div class="profile-text-container">
+                    <span class="profile_text">Profile</span>
+                    <i class="fas fa-caret-down"></i>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="content-container">
+            <div class="featured-content1"
+            style="background: linear-gradient(to bottom, rgba(0,0,0,0), #151515), url('./static/img/f-1.jpg');">
+                <div class="featured-content">
+                    <img class="featured-title" src="./static/img/logo.jpg" alt="">
+                    <p class="featured-desc">Web xem phim của nhóm 1 .</p>
+                    <button class="featured-button">Watch</button>
+                </div>
+                <div class="featured-content2">
+                    <button class="btn_delete_movie">Xoá Phim</button>
+                    <button class="btn_update_movie">Thêm Phim</button>
+                    <button class="btn_delete_user">Xoá User</button>
+                    <form class="form_trainmodel" action="/trainmodel" method="post">
+                        <button class="btn_train_model">Train Model</button>
+                    </form>
+                    
+                </div>
+            </div>    
+        </div>
+    </div>
+        <div class="box2" style="display:none">
+            <span class="action_name">
+                abv
+            </span>
+            <br>
+            <button class="box2_btn_out">Thoát</button>
+        </div>
+        <div class="box" style="display:none">
+            <span class="span_tag">Train model thành công</span>
+            <button class="out_action">
+                Thoát
+            </button>
+        </div>
+    <form style="display: none;" class="form_xoaphim" action="/xoaphim" method="post">
+        <label >ID phim</label>
+        <input class="input_xoaphim" type="text" name="id_movie" id="id_movie" placeholder="ID phim">
+        <label >Tác giả</label>
+        <input class="input_xoaphim" type="text" name="author" id="author" placeholder="Tác giả">
+        <label >Quốc gia</label>
+        <input class="input_xoaphim" type="text" name="country" id="country" placeholder="Quốc gia">
+        <button type="submit" class="btn_xoaphim">Xóa Phim</button>
+        <span class="btn_out_form_xoaphim">Thoát</span>
+      </form>
+      <form style="display: none;" class="form_themphim" action="/themphim" method="post">
+        <label >Tên Phim</label>
+        <input class="input_themphim" type="text" name="name_movie" id="name_movie" placeholder="Tên phim">
+        <label >Hình Ảnh</label>
+        <input class="input_themphim" type="text" name="image_movie" id="image_movie" placeholder="Hình Ảnh">
+        <label >Tác giả</label>
+        <input class="input_themphim" type="text" name="author" id="author" placeholder="Tác giả">
+        <label >Diễn Viên</label>
+        <input class="input_themphim" type="text" name="actor_movie" id="actor_movie" placeholder="Diễn Viên">
+        <label >Quốc gia</label>
+        <input class="input_themphim" type="text" name="country" id="country" placeholder="Quốc gia">
+        <label >Thời lượng</label>
+        <input class="input_themphim" type="text" name="duration" id="duration" placeholder="Thời lượng">
+        <button type="submit" class="btn_themphim">Thêm</button>
+        <span class="btn_out_form_themphim">Thoát</span>
+      </form>
+      <form style="display: none;" class="form_xoauser" action="/xoauser" method="post">
+        <label >ID User</label>
+        <input class="input_xoaphim" type="text" name="id_user" id="id_user" placeholder="ID user">
+        <button type="submit" class="btn_xoaphim">Xóa User</button>
+        <span class="btn_out_form_xoauser">Thoát</span>
+      </form>
+    <script>
+        // form xoa phim
+        const btnDeleteMovie = document.querySelector('.btn_delete_movie');
+        const deleteMovieForm = document.querySelector('.form_xoaphim');
+        const updateMovieForm = document.querySelector('.form_themphim');
+        const deleteUserForm = document.querySelector('.form_xoauser');
+        const updateUserForm = document.querySelector('.form_themuser');
+        const btn_out_form_themuser = document.querySelector('.btn_out_form_themuser');
+        const btn_update_user = document.querySelector('.btn_update_user');
+
+        btnDeleteMovie.addEventListener('click', () => {
+            updateMovieForm.style.display = 'none';
+            deleteUserForm.style.display = 'none';
+        // Hiển thị form Xóa phim
+            deleteMovieForm.style.display = 'block';
+            const outMovieForm = document.querySelector('.btn_out_form_xoaphim');
+            outMovieForm.addEventListener('click', () => {
+                deleteMovieForm.style.display = 'none';
+            })
+        });
+        // form them firm
+        const btnUpdateMovie = document.querySelector('.btn_update_movie');
+        btnUpdateMovie.addEventListener('click', () => {
+            deleteMovieForm.style.display = 'none';
+            deleteUserForm.style.display = 'none';
+            updateMovieForm.style.display = 'block';
+            const outUpdateMovieForm = document.querySelector('.btn_out_form_themphim');
+            outUpdateMovieForm.addEventListener('click', () => {
+                updateMovieForm.style.display = 'none';
+            })
+        });
+        // form xoa user
+        const btnDeleteUser = document.querySelector('.btn_delete_user');
+        btnDeleteUser.addEventListener('click', () => {
+            deleteMovieForm.style.display = 'none';
+            updateMovieForm.style.display = 'none';
+            deleteUserForm.style.display = 'block';
+        const outDeleteMovieForm = document.querySelector('.btn_out_form_xoauser');
+        outDeleteMovieForm.addEventListener('click', () => {
+            deleteUserForm.style.display = 'none';
+        })
+        });
+        // Out action
+        const boxAction = document.querySelector(".box");
+        // btn_train_model train Model
+        const trainModel = document.querySelector(".btn_train_model");
+        trainModel.addEventListener('click', () => {
+            boxAction.style.display = "flex";
+        })
+        const outAction = document.querySelector(".out_action");
+        outAction.addEventListener("click", () => {
+            boxAction.style.display = "none";
+        });
+        const box2Action = document.querySelector(".box2");
+        const box2_btn_out = document.querySelector(".box2_btn_out");
+        box2_btn_out.addEventListener("click", () => {
+            box2Action.style.display = "none";
+        });
+       
+    </script>
+</body>
