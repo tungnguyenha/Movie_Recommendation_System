@@ -115,8 +115,6 @@ class CF(object):
         for i in four_lines:
           arr1.append(i[1])
           arr2.append(i[2])
-        #four_lines= np.array(four_lines)
-        #four_lines_last_column = [row[-1] for row in four_lines]
         return arr1,arr2
 
 from flask import Flask,render_template,request,redirect
@@ -290,12 +288,10 @@ def trainmodel():
 def recommend():
     rs = trainmodels()
     a,b = rs.recommend(id_copy)
-    print('old_id_users',id_users)
     id_users.pop()
     id_users.append(a)
-    print('new_id_users',id_users)   
     id_firm = id_users[0][0:4]
-    return newPage(id_firm).prettify()
+    return newPage(id_firm)
 
 # danh gia
 @app.route('/danhgia',methods=['post'])
@@ -316,7 +312,6 @@ def danhgia():
     trainmodel()
     with open("./templates/member.html",encoding="utf-8") as fp:
         soup = bs4.BeautifulSoup(fp.read(), "html.parser")
-    
     rating_tag = soup.findAll(class_='rating')
     recommends = soup.findAll(class_='recommends')
     for i in recommends:
@@ -343,11 +338,12 @@ id_copy = []
 @app.route('/goiykhac',methods=['post'])   
 def goiykhac():
     id_firm = random.sample(id_users[0], 4)
-    return newPage(id_firm).prettify()
+    return newPage(id_firm)
 def newPage(arr):
         cursor = conn.cursor()
         cursor.execute('SELECT * FROM Movie WHERE Movie_Id IN (?, ?, ?, ?);', *arr)
         customers = cursor.fetchall()
+        print('customers',customers)
         with open("./templates/member_root.html",encoding="utf-8") as fp:
             soup = bs4.BeautifulSoup(fp.read(), "html.parser")
         # tim kiem cac the chau ten phim
@@ -398,19 +394,19 @@ def newPage(arr):
         for i in id_nguoidung:
             i['value'] = id_copy[0]
         # Change value id_movie
-        j=3
+        j=0
         for i in id_phim:
-            i['value'] = arr[j]
-            j-=1
+            i['value'] = customers[j][0]
+            j+=1
         # change id 
         span_id = soup.findAll(class_='inf_change_id')
-        j=3
+        j=0
         for i in span_id:
-            i.string.replace_with(str(arr[j]))
-            j-=1
+            i.string.replace_with(str(customers[j][0]))
+            j+=1
         with open("./templates/member.html", "w",encoding="utf-8") as f:
             f.write(str(soup))
-        return soup
+        return soup.prettify()
 @app.route('/login',methods=['post'])   
 def login():
     # Get Id 
@@ -437,11 +433,11 @@ def login():
                 id_users.append(list_id_user)           
             id_firm = id_users[0][0:4]
             print('id_users',id_users)
-            return newPage(id_firm).prettify()
+            return newPage(id_firm)
         else:
             array = [i for i in range(1674)]
             id_firm = random.sample(array, 4)
-            return newPage(id_firm).prettify()       
+            return newPage(id_firm)    
     else:
         cursor.execute("SELECT * FROM Admins WHERE Email='"+ str(email) +"'AND Matkhau ='"+ str(pw)+"'")
         admins = cursor.fetchall()
