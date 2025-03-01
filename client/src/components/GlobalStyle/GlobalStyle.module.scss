@@ -1,0 +1,35 @@
+@import 'normalize.css';
+:root{
+    --primaryColor: rgb(28, 199, 73);
+    --hoverPrimary: rgb(94, 239, 133);
+    --secondaryColor: rgb(242, 191, 131);
+    --background-layout: rgb(26, 28, 34);
+    --borderLeftbar: rgb(140, 137, 137);
+    --backgroundMild: rgb(17, 19, 25);
+    --backgroundMildHover: rgb(54, 55, 60);
+    --textWhite:rgb(198, 192, 192);
+    --textGray: rgb(112, 110, 110);
+    --removeColor: #dc3545;
+    --removeHover: #bb2d3b;
+    --textSearch: rgb(204, 204, 204);
+    --backgroundVip: rgb(242, 242, 242);
+    --backgroundVipHover: rgb(240, 232, 222);
+    --backgroundVipIcon:rgb(17, 19, 25);
+    --backgroundVipApproved: #b6eab6;
+    --backgroundVipProcessing: #f4f1c9;
+
+
+}
+h1,h2,h3,h4,h5,h6,p,span{
+    padding: 0;
+    margin: 0;
+}
+ul,li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+input,button{
+    border: none;
+    outline: none;
+}

@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "axios": "^1.6.7",
+    "react-minimal-pie-chart": "^8.4.0"
+  }
+}

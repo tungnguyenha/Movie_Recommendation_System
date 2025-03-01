@@ -1,0 +1,71 @@
+.history-layout{
+    .history-header{
+        position: sticky;
+        top: 0;
+        z-index: 9999;
+        div{
+            background-color: var(--background-layout);
+        }
+    }
+}
+.history-left{
+    width: 244px;
+    left: 0;
+    background-color: var(--background-layout);
+
+    div:first-child{
+        background: url("//www.iqiyipic.com/lequ/20220420/ef370278e3214b7aa19ab4ba747cb360.jpg");
+        display: flex;
+        align-items: center;
+        height: 96px;
+        width: 100%;
+        padding: 30px;
+        img{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+        span{
+            margin-left: 10px;
+            font-weight: 600;
+            color: white;
+            font-size: 16px;
+        }
+    }
+    .history-left-btn{
+        margin: 10px 25px;
+        button{
+            width: 100%;
+        }
+    }
+    ul{
+        margin: 20px 0 0 25px;
+        li{
+            padding: 20px 0;
+            margin-right: 20px;
+            a{
+                text-decoration: none;
+                font-size: 17px;
+                color: white;
+                font-weight: 600;
+                &:hover{
+                    color: var(--primaryColor);
+                }
+            }
+            &:first-child{
+                border-bottom: 1px solid var(--borderLeftbar);
+            }
+            &:last-child{
+                border-top: 1px solid var(--borderLeftbar);
+            }
+
+        }
+    }
+}
+.content{
+    display: flex;
+    .content-child{
+        flex:1;
+        background-color: var(--backgroundMild);
+    }
+}
